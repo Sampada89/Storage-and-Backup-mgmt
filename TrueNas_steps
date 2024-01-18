@@ -1,0 +1,59 @@
+truNas
+firefox-----ip
+userid-root
+password-root
+
+
+Services--> iscsi--action edit---
+
+*Target Global Configuration
+give base name
+isns server
+Save
+
+*Portals -->edit
+ip address  for now we are using 0.0.0.0 
+Save
+
+*Initiator Groups
+select -- Allow All Initiator
+save
+
+*Targets-- edit
+<target name>
+Portal groupId-1
+Initiator Group Id-ALL
+Authentication Method- None
+Save
+
+*Extent--edit
+<extent name>
+extent type -file
+path to the extent-- /mnt/san/<extent name
+File size---
+Save
+
+
+*Associated target
+<target name> 
+LUN Id
+<extent name>
+Save
+
+Go to Shell On dashboard
+cd /mnt/san
+ls
+du -sh <target name>
+
+
+search on windows--> iSCSI Initiator
+Traget-- <ip address>
+connect
+
+again go to windows --> Disk Management
+allocte new simple and check new disk is created in my pc
+
+
+
+
+
